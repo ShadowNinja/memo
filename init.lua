@@ -10,7 +10,7 @@ memo.filename = worldpath.."/memos.txt"
 memo.memos = {}
 
 function memo:save()
-	file, err = io.open(self.filename, "w")
+	local file, err = io.open(self.filename, "w")
 	if err then
 		return err
 	end
@@ -19,7 +19,7 @@ function memo:save()
 end
 
 function memo:load()
-	file, err = io.open(self.filename, "r")
+	local file, err = io.open(self.filename, "r")
 	if err then
 		self.memos = self.memos or {}
 		return err
